@@ -1,0 +1,39 @@
+<mvc:View controllerName="com.employee.zemployeeui5app.controller.Multivalueuielements"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:c="sap.ui.core">
+    <Page id="page1" title="Use Case of Multi Value UI elements">
+        <content>
+            <f:SimpleForm title="Multi Value UI Elements Use Case" editable="true" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="2" labelSpanS="12" emptySpanXL="4" emptySpanL="4" emptySpanM="4">
+                <f:content>
+                    <Label text="Select BOX"></Label>
+                    <Select items="{oModel>/EmployeeSet}">
+                        <items>
+                            <c:Item text="{oModel>Name}"></c:Item>
+                        </items>
+                    </Select>
+                    <Label text="Combo Box"></Label>
+                    <ComboBox items="{oModel>/EmployeeSet}">
+                        <items>
+                            <c:Item text="{oModel>Name}"></c:Item>
+                        </items>
+                    </ComboBox>
+                    <Label text="Multi Combo Box"></Label>
+                    <MultiComboBox items="{oModel>/EmployeeSet}" showSelectAll="true">
+                        <items>
+                            <c:Item text="{oModel>Name}"></c:Item>
+                        </items>
+                    </MultiComboBox>
+                    <Label text="RadiButton Group"></Label>
+                    <RadioButtonGroup buttons="{oModel>/EmployeeSet}" columns="5">
+                        <buttons>
+                            <RadioButton text="{oModel>Name}"></RadioButton>
+                        </buttons>
+                    </RadioButtonGroup>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

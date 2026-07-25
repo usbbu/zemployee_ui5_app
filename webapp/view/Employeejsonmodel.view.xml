@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.employee.zemployeeui5app.controller.Employeejsonmodel"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns="sap.m">
+   <Page id="page" title="Employees Details View for the usgae of Json Model Object">
+       <Table class="sapUiSmallMargin" width="auto" items="{empModel>/results}">
+         <headerToolbar>
+            <Toolbar >
+               <Title text="Employee Details"></Title>
+            </Toolbar>
+         </headerToolbar>
+         <columns>
+            <Column >
+               <Text text="Employee Id"></Text>
+            </Column>
+            <Column >
+               <Text text="Name"></Text>
+            </Column>
+            <Column>
+               <Text text="Designation"></Text>
+            </Column>
+            <Column>
+               <Text text="Email"></Text>
+            </Column>
+            <Column>
+               <Text text="Salary"></Text>
+            </Column>
+            <Column >
+               <Text text="Status"></Text>
+            </Column>
+            <Column >
+               <Text text="Phone Number"></Text>
+            </Column>
+            <Column >
+               <Text text="Rating"></Text>
+            </Column>
+         </columns>
+         <items>
+            <ColumnListItem >
+               <Text text="{empModel>Empid}"></Text>
+               <Text text="{empModel>Name}"></Text>
+               <Text text="{empModel>Desig}"></Text>
+               <Text text="{empModel>Email}"></Text>
+               <Text text="{empModel>Salary}"></Text>
+               <Text text="{empModel>Status}"></Text>
+               <Text text="{empModel>Phone}"></Text>
+               <Text text="{empModel>Rating}"></Text>
+            </ColumnListItem>
+         </items>
+
+      </Table>
+   </Page>
+</mvc:View>

@@ -1,0 +1,152 @@
+{
+  "_version": "1.86.0",
+  "sap.app": {
+    "id": "com.employee.zemployeeui5app",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.29.0",
+      "toolsId": "61d02e7d-a855-43a9-b8e9-78912bf1fede"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUSM_EMPLOYEE_DETAILS_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.150.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.employee.zemployeeui5app.i18n.i18n"
+        }
+      },
+      "oModel": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "empModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.employee.zemployeeui5app.view",
+        "async": true,
+        "viewPath": "com.employee.zemployeeui5app.view"
+      },
+      "routes": [
+        {
+          "name": "RouteEmployee",
+          "pattern": ":?query:",
+          "target": [
+            "TargetEmployee"
+          ]
+        },
+        {
+          "name": "RouteEmployeejsonmodel",
+          "pattern": "Employeejsonmodel",
+          "target": [
+            "TargetEmployeejsonmodel"
+          ]
+        },
+        {
+           "name": "RouteMultivalueuielements",
+          "pattern": "Multivalueuielements",
+          "target": [
+          "TargetMultivalueuielements"
+          ]
+        },
+        {
+           "name": "RouteFormatter",
+          "pattern": "Formatter",
+          "target": [
+          "TargetFormatter"
+          ]
+        }
+         
+        ],
+        "targets": {
+          "TargetEmployee": {
+            "id": "Employee",
+            "name": "Employee"
+          },
+          "TargetEmployeejsonmodel": {
+            "id": "Employeejsonmodel",
+            "name": "Employeejsonmodel"
+          },
+          "TargetMultivalueuielements": {
+            "id": "Multivalueuielements",
+            "name": "Multivalueuielements"
+          },
+           "TargetFormatter": {
+            "id": "Formatter",
+            "name": "Formatter"
+          }
+          
+        }
+      },
+      "rootView": {
+        "viewName": "com.employee.zemployeeui5app.view.App",
+        "type": "XML",
+        "id": "App",
+        "async": true
+      }
+    }
+  }

@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.employee.zemployeeui5app.controller.Formatter"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns="sap.m">
+   <Page id="page2" title="Use Case for the Formatter This will be using to Replace the JSON MODE OBJECT">
+      <Table class="sapUiSmallMargin" width="auto" items="{oModel>/EmployeeSet}">
+         <headerToolbar>
+            <Toolbar >
+               <Title text="Employee Details"></Title>
+            </Toolbar>
+         </headerToolbar>
+         <columns>
+            <Column >
+               <Text text="Employee Id"></Text>
+            </Column>
+            <Column >
+               <Text text="Name"></Text>
+            </Column>
+            <Column>
+               <Text text="Designation"></Text>
+            </Column>
+            <Column>
+               <Text text="Email"></Text>
+            </Column>
+            <Column>
+               <Text text="Salary"></Text>
+            </Column>
+            <Column >
+               <Text text="Status"></Text>
+            </Column>
+            <Column >
+               <Text text="Phone Number"></Text>
+            </Column>
+            <Column >
+               <Text text="Rating"></Text>
+            </Column>
+         </columns>
+         <items>
+            <ColumnListItem >
+               <Text text="{oModel>Empid}"></Text>
+               <Text text="{oModel>Name}"></Text>
+               <Text text="{path:'oModel>Desig', formatter:'.f.formatDesig'}"></Text>
+               <Text text="{oModel>Email}"></Text>
+               <Text text="{oModel>Salary}"></Text>
+               <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status', formatter:'.f.formatStatus'}" inverted="true" icon="{path:'oModel>Status' , formatter:'.f.formaticon'}"></ObjectStatus>
+               <Text text="{oModel>Phone}"></Text>
+               <Text text="{oModel>Rating}"></Text>
+            </ColumnListItem>
+         </items>
+
+      </Table>
+   </Page>
+</mvc:View>
